@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "migrateDev": "npx prisma db push"
+    "migrateDev": "prisma db push"
   },
   "dependencies": {
     "@next/font": "13.0.7",
