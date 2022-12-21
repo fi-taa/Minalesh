@@ -12,10 +12,13 @@ services:
       - POSTGRES_PASSWORD=${DB_PASSWORD}
       - POSTGRES_DB=${DB_NAME}
 
-  api:
+  app:
     container_name: minalesh
+    image: next-prisma-docker
     restart: unless-stopped
-    build: .
+    build:
+      context: .
+      dockerfile: Dockerfile
     ports:
       - ${SERVER_PORT}:${SERVER_PORT}
     depends_on:
