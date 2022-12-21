@@ -8,9 +8,9 @@ echo "migrating database ..."
 
 yarn migrateDev
 
-echo "seeding .."
+# echo "seeding .."
 
-yarn seedCI
+# yarn seedCI
 
 echo "starting the server"
 
