@@ -13,19 +13,19 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
-## Install
+Install
 
 ```sh
 yarn install
 ```
 
-## Usage
+Usage
 
 ```sh
 yarn dev
 ```
 
-## You can use docker compose to set up every thing for you on excuting the following script:
+You can use docker compose to set up every thing for you on excuting the following script:
 
 ```bash
 yarn dockerDev
