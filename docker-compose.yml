@@ -9,5 +9,6 @@ services:
     env_file:
       - .env
     volumes:
-      - ./src:/app/src
+      - ./src/pages:/app/src/pages
+      - ./src/styles:/app/src/styles
       - ./public:/app/public
