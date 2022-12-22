@@ -14,6 +14,4 @@ RUN yarn install
 
 COPY next.config.js ./next.config.js
 
-COPY src ./src
-COPY public ./public
 CMD [ "yarn","dev" ]
