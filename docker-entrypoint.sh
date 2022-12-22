@@ -1,12 +1,12 @@
 #!/bin/sh
 
-# echo "Waiting for database to start..."
+echo "Waiting for database to start..."
 
-# ./wait-for db:${DB_PORT} 
+./wait-for db:${DB_PORT} 
 
-# echo "migrating database ..."
+echo "migrating database ..."
 
-# yarn migrateDev
+yarn migrateDev
 
 # echo "seeding .."
 
