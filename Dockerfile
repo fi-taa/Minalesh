@@ -12,8 +12,7 @@ RUN npx prisma generate
 
 COPY next.config.js ./next.config.js
 
-COPY pages ./src/pages
+COPY src ./src
 COPY public ./public
-COPY styles ./src/styles
 
 CMD [ "yarn","dev" ]
