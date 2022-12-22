@@ -13,7 +13,7 @@ services:
       - POSTGRES_DB=${DB_NAME}
 
   app:
-    container_name: minalesh
+    image: docker-nextjs-dev
     restart: unless-stopped
     build: .
     ports:
