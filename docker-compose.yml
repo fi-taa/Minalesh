@@ -1,33 +1,13 @@
 version: "3.8"
 services:
-  db:
-    container_name: postgresql
-    image: postgres:15.1-alpine3.17
-    ports:
-      - "5433:5433"
-    volumes:
-      - data:/data/db
-    environment:
-      - POSTGRES_USER=${DB_USER}
-      - POSTGRES_PASSWORD=${DB_PASSWORD}
-      - POSTGRES_DB=${DB_NAME}
-
   app:
     image: docker-nextjs-dev
     restart: unless-stopped
     build: .
     ports:
       - ${SERVER_PORT}:${SERVER_PORT}
-    depends_on:
-      - db
-    environment:
-      - DATABASE_URL =${DB_SCHEMA}://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/${DB_NAME}
     env_file:
       - .env
     volumes:
-      - .:/usr/src/app
-      - /app/node_modules
-    command: ./docker-entrypoint.sh
-
-volumes:
-  data:
+      - ./src:/app/src
+      - ./public:/app/public

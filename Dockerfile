@@ -1,8 +1,10 @@
-FROM node:18.12.1-alpine3.16
+	FROM node:18.12.1-alpine3.16
 
-WORKDIR /usr/src/nextapp
+WORKDIR /app
 
-COPY package.json yarn* .pnp* postcss.config.js tailwind.config.js /usr/src/nextapp/
+COPY package.json yarn.lock ./
+COPY .pnp* ./
+COPY postcss.config.js tailwind.config.js ./
 
 # COPY prisma  ./prisma/
 
