@@ -10,6 +10,12 @@ npm run dev
 yarn dev
 ```
 
+You can use docker compose to set up every thing for you on excuting the following command:
+
+```bash
+docker compose up --build
+```
+
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
