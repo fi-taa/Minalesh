@@ -14,11 +14,8 @@ services:
 
   app:
     container_name: minalesh
-    image: next-prisma-docker
     restart: unless-stopped
-    build:
-      context: .
-      dockerfile: Dockerfile
+    build: .
     ports:
       - ${SERVER_PORT}:${SERVER_PORT}
     depends_on:
