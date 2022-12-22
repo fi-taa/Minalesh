@@ -5,7 +5,7 @@ WORKDIR /app
 COPY package.json yarn.lock ./
 COPY .pnp* ./
 COPY postcss.config.js tailwind.config.js ./
-COPY docker-entrypoint.sh ./
+COPY docker-entrypoint.sh wait-for ./
 
 COPY prisma  ./prisma/
 
