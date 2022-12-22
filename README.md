@@ -10,10 +10,10 @@ npm run dev
 yarn dev
 ```
 
-You can use docker compose to set up every thing for you on excuting the following command:
+You can use docker compose to set up every thing for you on excuting the following script:
 
 ```bash
-docker compose up --build
+yarn dockerDev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
