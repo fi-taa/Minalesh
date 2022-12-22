@@ -6,7 +6,7 @@ services:
     ports:
       - "5433:5433"
     volumes:
-      - data:/data/minalesh
+      - data:/data/db
     environment:
       - POSTGRES_USER=${DB_USER}
       - POSTGRES_PASSWORD=${DB_PASSWORD}
@@ -25,8 +25,8 @@ services:
     env_file:
       - .env
     volumes:
-      - .:/usr/src/nextapp
-      - /nextapp/node_modules
+      - .:/usr/src/app
+      - /app/node_modules
     command: ./docker-entrypoint.sh
 
 volumes:
