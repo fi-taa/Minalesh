@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "migrateDev": "prisma db push",
-    "dockerDev": "docker compose up --build"
+    "dockerDev": "docker compose up"
   },
   "dependencies": {
     "@next/font": "13.0.7",
