@@ -30,7 +30,7 @@ You can use docker compose to set up every thing for you on excuting the followi
 ```bash
 yarn dockerDev
 #or
-docker compose up
+docker compose up --build --force-recreate
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
