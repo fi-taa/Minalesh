@@ -31,7 +31,3 @@ model Food {
   isSpecial   Boolean? @default(false)
   description String?
 }
-
-model Location {
-  id String @id @default(uuid())
-}
