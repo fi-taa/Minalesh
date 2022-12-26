@@ -1,5 +1,5 @@
 import React from 'react'
-import HRP from "../components/homepage_res_preview"
+import HRP from "./homepage_res_preview"
 
 function general_res_preiview() {
     const array = [...Array(20)]

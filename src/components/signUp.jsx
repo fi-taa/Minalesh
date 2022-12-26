@@ -2,7 +2,7 @@ import React from "react";
 import { z } from "zod";
 import { Formik } from "zod-formik-adapter";
 import { toFormikValidationSchema } from "zod-formik-adapter";
-import  InputField from "../components/inputField"
+import  InputField from "./inputField"
 function SignUp() {
   return (
     // return
