@@ -1,0 +1,32 @@
+version: "3.8"
+services:
+  db:
+    container_name: Minalesh
+    image: postgres:15.1-alpine3.17
+    ports:
+      - "5433:${DB_PORT}"
+    volumes:
+      - data:/data/db
+    environment:
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+      - POSTGRES_DB=${DB_NAME}
+  app:
+    image: docker-nextjs-dev
+    restart: unless-stopped
+    build: .
+    ports:
+      - ${SERVER_PORT}:${SERVER_PORT}
+    depends_on:
+      - db
+    environment:
+      - DATABASE_URL =${DB_SCHEMA}://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/${DB_NAME}
+    env_file:
+      - .env
+    volumes:
+      - ./src:/app/src
+      - ./public:/app/public
+    command: ./docker-entrypoint.sh
+
+volumes:
+  data:
