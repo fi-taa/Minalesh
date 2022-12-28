@@ -20,14 +20,14 @@ model User {
 }
 
 model Food {
-  id          String   @id @default(uuid())
+  id          String  @id @default(uuid())
   name        String
   price       Float
-  totalRating Int      @default(0)
-  totalRators Int      @default(0)
-  rating      Float    @default(0)
+  totalRating Int     @default(0)
+  totalRators Int     @default(0)
+  rating      Float   @default(0)
   imageId     String?
-  status      Boolean? @default(false)
-  isSpecial   Boolean? @default(false)
+  status      Boolean @default(false)
+  isSpecial   Boolean @default(false)
   description String?
 }
