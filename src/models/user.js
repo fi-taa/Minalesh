@@ -3,14 +3,12 @@ import { PrismaClient, Prisma } from "@prisma/client";
 const prisma = new PrismaClient();
 
 export const createUserData = async (data) => {
-  const { email, name, phoneNumber, role, password } = data;
+  let { email, name, phoneNumber, role, password } = data;
+  phoneNumber = parseInt(phoneNumber);
+
   try {
-    const newUser = prisma.user.create({
-      email,
-      name,
-      phoneNumber,
-      role,
-      password,
+    const newUser = await prisma.user.create({
+      data: { email, name, phoneNumber, role, password },
     });
 
     const filteredUser = {
@@ -21,8 +19,6 @@ export const createUserData = async (data) => {
       role: newUser.role,
     };
 
-    console.log(filteredUser);
-
     return { success: true, message: { ...filteredUser } };
   } catch (error) {
     if (error instanceof Prisma.PrismaClientKnownRequestError) {
@@ -31,34 +27,7 @@ export const createUserData = async (data) => {
         message: "Couldn't create user due to invalid value",
       };
     }
-
-    return { success: false, message: "Something went wrong" };
-  }
-};
-
-export const getUserData = async (id) => {
-  try {
-    const userData = await prisma.user.findUnique({
-      where: {
-        id,
-      },
-      select: {
-        id: true,
-        email: true,
-        name: true,
-        phoneNumber: true,
-        role: true,
-      },
-    });
-
-    return { success: true, message: { ...userData } };
-  } catch (error) {
-    if (error instanceof Prisma.PrismaClientKnownRequestError) {
-      return {
-        success: false,
-        message: "User doesn't exist",
-      };
-    }
+    console.log(error);
     return { success: false, message: "Something went wrong" };
   }
 };
