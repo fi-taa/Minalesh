@@ -21,6 +21,8 @@ export const createUserData = async (data) => {
       role: newUser.role,
     };
 
+    console.log(filteredUser);
+
     return { success: true, message: { ...filteredUser } };
   } catch (error) {
     if (error instanceof Prisma.PrismaClientKnownRequestError) {
