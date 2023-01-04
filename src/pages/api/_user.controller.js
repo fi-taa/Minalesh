@@ -11,7 +11,7 @@ export async function httpCreateUser(req, res) {
   }
 
   return res
-    .status(200)
+    .status(201)
     .json({ success: newUser.success, message: newUser.message });
 }
 
@@ -41,7 +41,7 @@ export async function httpUpdateUser(req, res) {
   }
 
   return res
-    .status(200)
+    .status(204)
     .json({ success: updateUserData.success, message: updateUserData.message });
 }
 
@@ -56,6 +56,6 @@ export async function httpDeleteUser(req, res) {
   }
 
   return res
-    .status(200)
+    .status(204)
     .json({ success: message.success, message: message.message });
 }
