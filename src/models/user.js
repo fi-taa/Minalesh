@@ -5,7 +5,7 @@ const prisma = new PrismaClient();
 export const createUserData = async (data) => {
   const { email, name, phoneNumber, role, password } = data;
   try {
-    const newArticle = prisma.article.create({
+    const newUser = prisma.article.create({
       email,
       name,
       phoneNumber,
@@ -13,14 +13,15 @@ export const createUserData = async (data) => {
       password,
     });
 
-    const filteredArticle = {
-      email: newArticle.email,
-      name: newArticle.name,
-      phoneNumber: newArticle.phoneNumber,
-      role: newArticle.role,
+    const filteredUser = {
+      id: newUser.id,
+      email: newUser.email,
+      name: newUser.name,
+      phoneNumber: newUser.phoneNumber,
+      role: newUser.role,
     };
 
-    return { success: true, message: { ...filteredArticle } };
+    return { success: true, message: { ...filteredUser } };
   } catch (error) {
     if (error instanceof Prisma.PrismaClientKnownRequestError) {
       return {
