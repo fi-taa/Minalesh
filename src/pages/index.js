@@ -1,10 +1,9 @@
-import SignUp from '../components/signUp'
+import SignUp from "../components/signUp";
 
 export default function Home() {
   return (
     <>
-     <SignUp />
-   
+      <SignUp />
     </>
-  )
+  );
 }
