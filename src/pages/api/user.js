@@ -1,4 +1,9 @@
-import { httpCreateUser, httpUpdateUser } from "./_user.controller";
+import {
+  httpCreateUser,
+  httpUpdateUser,
+  httpGetUser,
+  httpDeleteUser,
+} from "./_user.controller";
 
 export default function handler(req, res) {
   switch (req.method) {
