@@ -1,9 +1,9 @@
-import SignUp from "../components/signUp";
+import Hpr from "../components/general_res_preiview";
 
 export default function Home() {
   return (
     <>
-      <SignUp />
+      <Hpr />
     </>
   );
 }

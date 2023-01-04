@@ -14,7 +14,7 @@ function general_res_preiview() {
   );
 
   return (
-    <div className="grid grid-cols-3">
+    <div className="grid grid-cols-4">
       {array.map((_) => (
         <div>{view}</div>
       ))}
